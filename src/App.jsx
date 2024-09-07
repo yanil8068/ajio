@@ -4,18 +4,21 @@ import { useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { setUser, selectUsers } from "./Redux/Authentication/usersSlice";
 import { auth } from "./firebase/config";
-import { Electronics } from "./Components/Electronics/Electronics";
 import Mens from "./Pages/Mens/Mens";
 import MensProductDetail from "./Pages/Mens/MensProductDetail";
 import MensProduct from "./Pages/Mens/MensProduct";
 import Jewellery from "./Pages/Jewellery/Jewellery";
-
 import WomensPage from "./Pages/Womens/Womens";
-
-import Home from "./Pages/Home/Home";
+import  Home  from "./Pages/Homepage/Home";
 import Login from "./Pages/Login/Login";
 import Cart from "./Pages/Cart/Cart";
 import Wishlist from "./Pages/Wishlist/Wishlist";
+
+import  Electronics  from "./Pages/Electronics/Electronics";
+import  AllProduct  from "./Pages/Electronics/AllProduct";
+import  Product  from "./Pages/Electronics/Product";
+import Footer from "./Components/Footer/Footer";
+
 
 function App() {
   const dispatch = useDispatch();
