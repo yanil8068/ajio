@@ -56,7 +56,7 @@ VITE_API_BASE_URI=https://fakestoreapi.com
 
 #### 5. Run the Application:
 
-npm run dev
+_npm run dev_
 This will start the app at http://localhost:5173.
 
 #### 6. Deploy the Application:
