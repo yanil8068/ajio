@@ -82,7 +82,7 @@ const DeliveryDetails = () => {
                                 <h2 className="font-bold text-lg">{item.title}</h2>
                                 <p>Size: {item.size}</p>
                                 <p>Quantity: {item.quantity}</p>
-                                <p className="font-bold">₹{item.price * item.quantity}</p>
+                                <p className="font-bold">₹{item.price * item.quantity*83}</p>
                             </div>
                         </div>
                     ))}
@@ -96,7 +96,7 @@ const DeliveryDetails = () => {
                         <p>Bag discount: ₹-87.00</p>
                         <p>Delivery Fee: ₹{deliveryFee}</p>
                         <p>Platform Fee: ₹{platformFee}</p>
-                        <p className="font-bold">Order Total: ₹{orderTotal}</p>
+                        <p className="font-bold">Order Total: ₹{orderTotal*83}</p>
                     </div>
                     <button 
                         className="text-white p-4 rounded w-full hover:brightness-110"
