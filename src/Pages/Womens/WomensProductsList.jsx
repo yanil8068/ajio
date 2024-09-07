@@ -1,13 +1,14 @@
 import React from "react";
+import WomensProductsList from "../../Components/Womens/WomensProductList";
 
-import Womens from "../../Components/Womens/Womens";
+
 
 const WomensPage = () => {
   return (
     <>
     <div>
     
-      <Womens/>
+      <WomensProductsList/>
     </div>
     </>
   );
