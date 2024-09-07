@@ -1,16 +1,16 @@
-// src/Redux/Mens/Mens.js
+// src/Redux/Jewellery/Jewellery.js
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-export const fetchMensProducts = createAsyncThunk(
-  "mens/fetchMensProducts",
+export const fetchJewelleryProducts = createAsyncThunk(
+  "jewellery/fetchJewelleryProducts",
   async () => {
-    const response = await fetch("https://fakestoreapi.com/products/category/men's%20clothing");
+    const response = await fetch("https://fakestoreapi.com/products/category/jewelery");
     return response.json();
   }
 );
 
-const mensSlice = createSlice({
-  name: "mens",
+const jewellerySlice = createSlice({
+  name: "jewellery",
   initialState: {
     products: [],
     status: 'idle', // Add status here
@@ -18,19 +18,19 @@ const mensSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchMensProducts.pending, (state) => {
+      .addCase(fetchJewelleryProducts.pending, (state) => {
         state.status = 'loading'; // Update status here
         state.error = null;
       })
-      .addCase(fetchMensProducts.fulfilled, (state, action) => {
+      .addCase(fetchJewelleryProducts.fulfilled, (state, action) => {
         state.status = 'succeeded'; // Update status here
         state.products = action.payload;
       })
-      .addCase(fetchMensProducts.rejected, (state, action) => {
+      .addCase(fetchJewelleryProducts.rejected, (state, action) => {
         state.status = 'failed'; // Update status here
         state.error = action.error.message;
       });
   },
 });
 
-export default mensSlice.reducer;
+export default jewellerySlice.reducer;
