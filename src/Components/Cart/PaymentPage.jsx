@@ -235,7 +235,7 @@ const PaymentPage = () => {
                         <p>Delivery Fee: ₹{deliveryFee}</p>
                         <p>Platform Fee: ₹{platformFee}</p>
                         <hr className="my-5" />
-                        <p className="font-bold">Order Total: ₹{orderTotal}</p>
+                        <p className="font-bold">Order Total: ₹{orderTotal*83}</p>
                     </div>
                 </div>
             </div>
