@@ -4,15 +4,22 @@ import { useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { setUser, selectUsers } from "./Redux/Authentication/usersSlice";
 import { auth } from "./firebase/config";
-import Mens from "./Pages/Mens/Mens";
-import MensProductDetail from "./Pages/Mens/MensProductDetail";
-import MensProduct from "./Pages/Mens/MensProduct";
-import Jewellery from "./Pages/Jewellery/Jewellery";
-import WomensPage from "./Pages/Womens/Womens";
-import  Home  from "./Pages/Homepage/Home";
 import Login from "./Pages/Login/Login";
-import Cart from "./Pages/Cart/Cart";
-import Wishlist from "./Pages/Wishlist/Wishlist";
+import  Home  from "./Pages/Homepage/Home";
+
+import WomensPage from "./Pages/Womens/Womens";
+import WomensProductsListPage  from "./Pages/Womens/WomensProductsList";
+import MensProductsListPage from "./Pages/Mens/MensProductsList"; 
+import MensProductDetailsPage from "./Pages/Mens/MensProductsDetails";
+import JewelleryPage from "./Pages/Jewellery/Jewellery";
+import JewelleryProductDetailsPage from "./Pages/Jewellery/JewelleryProductDetails";
+import Cart from './Pages/Cart/Cart';
+import DeliveryDetails from './Components/Cart/DeliveryDetails';
+import JewelleryProductsListPage from "./Pages/Jewellery/JewelleryProductList";
+import WomensProductDetailsPage from "./Pages/Womens/WomensProductDetails";
+import PaymentPage from "./Components/Cart/PaymentPage";
+import WishlistPage from "./Pages/Wishlist/Wishlist";
+import MensPage from "./Pages/Mens/Mens";
 
 import  Electronics  from "./Pages/Electronics/Electronics";
 import  AllProduct  from "./Pages/Electronics/AllProduct";
@@ -52,29 +59,41 @@ function App() {
           <>
             <Route path="/" element={<Home />} />
             <Route path="/electronics" element={<Electronics />} />
+            <Route path="/electronics/products" element={<AllProduct/>} />
+            <Route path="/electronics/products/:id" element={<Product/>} />
 
-            <Route path="/jewellery" element={<Jewellery />} />
-            <Route path="/mens" element={<Mens />} />
-            <Route path="/mens/:id" element={<MensProductDetail />} />
-            <Route path="/mens/list" element={<MensProduct />} />
-            <Route path="/womens" element={<WomensPage />} />
-
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/wishlist" element={<Wishlist />} />
+           <Route path="/mens" element={<MensPage />} />
+          <Route path="/mens/products" element={<MensProductsListPage />} />
+          <Route path="/mens/:productId" element={<MensProductDetailsPage />} />
+          <Route path="/womens" element={<WomensPage />} />
+          <Route path="/womens/products" element={<WomensProductsListPage />} />
+          <Route path="/womens/:productId" element={<WomensProductDetailsPage />} />
+          <Route path="/jewellery" element={<JewelleryPage />} />
+          <Route path="/jewellery/products" element={<JewelleryProductsListPage/>} />
+          <Route path="/jewellery/:productId" element={<JewelleryProductDetailsPage />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/wishlist" element={<WishlistPage />} />
+          <Route path="/delivery-details" element={<DeliveryDetails />} />
+          <Route path="/payment" element={<PaymentPage />} />
           </>
         ) : (
           <>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/mens" element={<Mens />} />
-            <Route path="/mens/:id" element={<MensProductDetail />} />
-            <Route path="/mens/list" element={<MensProduct />} />
-            <Route path="/womens" element={<WomensPage />} />
+              <Route path="/mens" element={<MensPage />} />
+          <Route path="/mens/products" element={<MensProductsListPage />} />
+          <Route path="/mens/:productId" element={<MensProductDetailsPage />} />
+          <Route path="/womens" element={<WomensPage />} />
+          <Route path="/womens/products" element={<WomensProductsListPage />} />
+          <Route path="/womens/:productId" element={<WomensProductDetailsPage />} />
+          <Route path="/jewellery" element={<JewelleryPage />} />
+          <Route path="/jewellery/products" element={<JewelleryProductsListPage/>} />
+          <Route path="/jewellery/:productId" element={<JewelleryProductDetailsPage />} />
 
             <Route path="/electronics" element={<Electronics />} />
             <Route path="/electronics/products" element={<AllProduct/>} />
             <Route path="/electronics/products/:id" element={<Product/>} />
-            <Route path="/jewellery" element={<Jewellery />} />
+         
           </>
         )}
       </Routes>
