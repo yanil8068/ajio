@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "author" : ['Anil Yadav','Ajay Yadav', 'Yogesh Ginti'],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
