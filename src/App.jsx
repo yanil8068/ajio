@@ -72,6 +72,8 @@ function App() {
             <Route path="/womens" element={<WomensPage />} />
 
             <Route path="/electronics" element={<Electronics />} />
+            <Route path="/electronics/products" element={<AllProduct/>} />
+            <Route path="/electronics/products/:id" element={<Product/>} />
             <Route path="/jewellery" element={<Jewellery />} />
           </>
         )}
