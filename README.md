@@ -79,6 +79,15 @@ Deploy the app to your preferred hosting service (e.g., Vercel, Netlify, or GitH
 1. Integrated Firebase and JWT for authentication based on API documentation.
 2. Implemented login, signup, and authentication redirect to ensure users are directed to the login page when they attempt to add items to the cart without being logged in.
 
+--Cart and Product Management:
+
+Created features that allow users to browse products, add them to the cart, and manage the cart .
+Used Redux Toolkit for global state management to ensure the cart state persisted across pages.
+
+--Search Functionality:
+
+Developed a search component that filters product lists based on user input, providing suggestions in real-time as they type.
+
 ##
 
 ## Challenges Faced & Solutions Implemented:
@@ -90,6 +99,11 @@ Deploy the app to your preferred hosting service (e.g., Vercel, Netlify, or GitH
 2. --Challenge: Maintaining a Responsive and Consistent UI:
    _Problem_: Ensuring the UI was responsive across different devices and screen sizes.
    _Solution_: Used Tailwind CSS for responsive and utility-based styling, ensuring the design adapted well to various screen sizes.
+
+3. --Challenge: Handling Authentication Redirects:
+
+_Problem_: Redirecting users to the login page when attempting to add items to the cart was initially causing page reloads infinitely.
+_Solution_: user state was changing infinitely that was causing issue to we implemented to change the user state only on signup and login and when theres a user in the session.
 
 ## Authors
 
