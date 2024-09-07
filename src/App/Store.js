@@ -1,20 +1,22 @@
 import { configureStore } from "@reduxjs/toolkit";
-import allProductReducer  from "../Redux/Electronics/allProductSlice";
+import allProductReducer from "../Redux/Electronics/allProductSlice";
 import usersReducer from "../Redux/Authentication/usersSlice";
-import mensReducer from '../Redux/Mens/Mens';
-import jewelleryReducer from '../Redux/Jewellery/Jewellery';
-import cartReducer from '../Redux/Cart/Cart'
-import womensReducer from '../Redux/Womens/Womens';
-import WishlistReducer from '../Redux/Wishlist/Wishlist';
+import mensReducer from "../Redux/Mens/Mens";
+import jewelleryReducer from "../Redux/Jewellery/Jewellery";
+import cartReducer from "../Redux/Cart/Cart";
+import womensReducer from "../Redux/Womens/Womens";
+import WishlistReducer from "../Redux/Wishlist/Wishlist";
 
+// redux store
 export default configureStore({
+  //all the reducers
   reducer: {
     users: usersReducer,
     allElectronicsProduct: allProductReducer,
     mens: mensReducer,
     jewellery: jewelleryReducer,
     cart: cartReducer,
-    womens:womensReducer,
-    wishlist:WishlistReducer
+    womens: womensReducer,
+    wishlist: WishlistReducer,
   },
 });

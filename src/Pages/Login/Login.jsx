@@ -1,22 +1,24 @@
 import { useState } from "react";
-import { auth } from "../../firebase/config.js";
+import { auth } from "../../firebase/config.js"; // Import Firebase auth instance
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   sendPasswordResetEmail,
   onAuthStateChanged,
 } from "firebase/auth";
-import { useDispatch } from "react-redux";
-import { setUser } from "../../Redux/Authentication/usersSlice.js";
+import { useDispatch } from "react-redux"; // Redux hook for dispatching actions
+import { setUser } from "../../Redux/Authentication/usersSlice.js"; // Redux action for setting the user
 
 function Login({ togglePopup }) {
+  // State to track loading status, login/signup type, user credentials, and error messages
   const [isLoading, setIsLoading] = useState(true);
-  const [loginType, setLoginType] = useState("login");
-  const [userCredentials, setUserCredentials] = useState({});
-  const [error, setError] = useState("");
+  const [loginType, setLoginType] = useState("login"); // Switch between login and signup modes
+  const [userCredentials, setUserCredentials] = useState({}); // Store user input for email and password
+  const [error, setError] = useState(""); // Store any error messages
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch(); // Redux dispatch function
 
+  // Firebase auth state change listener
   onAuthStateChanged(auth, (user) => {
     if (user) {
       // User is signed in, see docs for a list of available properties
@@ -28,6 +30,7 @@ function Login({ togglePopup }) {
       // User is signed out
       // ...
     }
+    // Once the auth state is determined, stop showing the loading spinner
     if (isLoading) {
       setIsLoading(false);
     }
@@ -38,11 +41,12 @@ function Login({ togglePopup }) {
     console.log(userCredentials);
   }
 
+  // Function to handle user signup
   function handleSignup(e) {
     e.preventDefault();
     console.log("signup");
     setError("");
-
+    // Firebase function to create a user with email and password
     createUserWithEmailAndPassword(
       auth,
       userCredentials.email,
@@ -64,13 +68,16 @@ function Login({ togglePopup }) {
         // console.log(errorMessage);
         // ..
       });
-    togglePopup();
+    togglePopup(); // Close the login/signup popup after signup
   }
+
+  // Function to handle user login
   function handleLogin(e) {
     e.preventDefault();
     //console.log("login");
     setError("");
 
+    // Firebase function to sign in with email and password
     signInWithEmailAndPassword(
       auth,
       userCredentials.email,
@@ -87,9 +94,10 @@ function Login({ togglePopup }) {
       .catch((error) => {
         setError(error.message);
       });
-    togglePopup();
+    togglePopup(); // Close the popup after login
   }
 
+  // Function to handle password reset
   function handlePasswordReset() {
     const email = prompt("Please enter your email");
     sendPasswordResetEmail(auth, email);
@@ -100,12 +108,14 @@ function Login({ togglePopup }) {
 
   return (
     <div className="flex items-center justify-center  ">
+      {/* Show loading spinner until authentication state is resolved */}
       {isLoading ? (
         <div>Loading...</div>
       ) : (
         <div className="container login-page w-full max-w-md p-8 space-y-8 bg-white  rounded-lg">
           <section>
             <div className="flex  justify-end">
+              {/* Button to close the login/signup popup */}
               <button
                 className="px-4 py-2 bg-blue-500 text-white rounded flex items-end "
                 onClick={
@@ -124,6 +134,7 @@ function Login({ togglePopup }) {
               Login or create an account to continue
             </p>
             <div className="login-type flex justify-center space-x-4 mb-4">
+              {/* Button to toggle between login and signup modes */}
               <button
                 className={`btn px-4 py-2 font-bold  rounded ${
                   loginType == "login" ? "bg-blue-500" : "bg-gray-300"
@@ -142,6 +153,7 @@ function Login({ togglePopup }) {
               </button>
             </div>
             <form className="add-form login space-y-4">
+              {/* Email input field */}
               <div className="form-control ">
                 <label className="block text-sm font-medium">Email *</label>
                 <input
@@ -154,6 +166,7 @@ function Login({ togglePopup }) {
                   className="w-full px-3 py-2 mt-1 border rounded-lg focus:outline-none focus:ring focus:ring-blue-200"
                 />
               </div>
+              {/* Password input field */}
               <div className="form-control">
                 <label className="block text-sm font-medium">Password *</label>
                 <input
@@ -166,6 +179,8 @@ function Login({ togglePopup }) {
                   className="w-full px-3 py-2 mt-1 border rounded-lg focus:outline-none focus:ring focus:ring-blue-200"
                 />
               </div>
+
+              {/* Conditional rendering of login or signup button based on the selected mode */}
               {loginType == "login" ? (
                 <button
                   onClick={(e) => {
@@ -186,10 +201,12 @@ function Login({ togglePopup }) {
                 </button>
               )}
 
+              {/* Display error message if one exists */}
               {error && (
                 <div className="error text-red-500 text-sm">{error}</div>
               )}
 
+              {/* Forgot password link */}
               <p
                 onClick={(e) => {
                   handlePasswordReset(e);

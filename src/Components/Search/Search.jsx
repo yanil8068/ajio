@@ -41,7 +41,7 @@ function Search() {
           <input
             type="text"
             placeholder="Search AJIO"
-            className="w-[220px] px-4 py-1 rounded-l-full focus:outline-none text-black border-l-[1px] border-t-[1px] border-b-[1px] border-black"
+            className="w-[170px] px-4 py-1 rounded-l-full focus:outline-none text-black border-l-[1px] border-t-[1px] border-b-[1px] border-black"
             value={query}
             onChange={handleInputChange}
           />
