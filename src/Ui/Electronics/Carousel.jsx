@@ -11,9 +11,9 @@ function Carousel({ images }) {
       <Slider {...settings}>
         {images.map((image) => (
           <div key={image.id} >
-            {image.url?<Link to={image.url}><img src={image.src} alt={image.alt} /></Link>
+            {image.url?<Link to={image.url}><img className="w-full h-[90%] lg:h-[450px]" src={image.src} alt={image.alt} /></Link>
             :
-            <img src={image.src} alt={image.alt} />
+            <img className="w-full" src={image.src} alt={image.alt} />
             }
           </div>
         ))}
