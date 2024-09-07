@@ -21,8 +21,6 @@ function Login({ togglePopup }) {
     if (user) {
       // User is signed in, see docs for a list of available properties
       // https://firebase.google.com/docs/reference/js/auth.user
-      // dispatch(setUser({ id: user.uid, email: user.email }));
-      //const uid = user.uid;
       // ...
     } else {
       dispatch(setUser(null));

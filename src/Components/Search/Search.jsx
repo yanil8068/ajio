@@ -4,7 +4,7 @@ import { items } from "../../Utils/Search/constants";
 import { useNavigate } from "react-router-dom";
 
 function Search() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [query, setQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
 
@@ -23,11 +23,11 @@ function Search() {
     }
   };
 
-  const handleClick = (suggestion)=>{
-    navigate(getLinkPath(suggestion))
-    setQuery('');
-    setSuggestions([])
-  }
+  const handleClick = (suggestion) => {
+    navigate(getLinkPath(suggestion));
+    setQuery("");
+    setSuggestions([]);
+  };
 
   const getLinkPath = (suggestion) => {
     if (suggestion.toLowerCase().includes("women")) return "/womens/products";
@@ -53,7 +53,7 @@ function Search() {
           <ul className="z-10 overflow-hidden max-h-72 absolute left-0 mt-1 w-full bg-white border border-gray-400 rounded-md text-black">
             {suggestions.map((suggestion, index) => (
               <li
-                onClick={()=>handleClick(suggestion)}
+                onClick={() => handleClick(suggestion)}
                 key={index}
                 className="block px-4 py-2 hover:bg-gray-200 cursor-pointer"
               >

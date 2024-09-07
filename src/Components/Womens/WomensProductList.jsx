@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
 
-export default function WomensProductsList () {
+export default function WomensProductsList() {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true); // Loading state
   const [originalProducts, setOriginalProducts] = useState([]); // To keep track of unfiltered products
@@ -23,13 +23,6 @@ export default function WomensProductsList () {
   }, []);
 
   async function getProducts() {
-    // const response = await fetch(
-    //   "https://fakestoreapi.com/products/category/women's clothing"
-    // );
-    // const data = await response.json();
-    // setProducts(data);
-    // setOriginalProducts(data); // Store the original product list for reset
-
     try {
       const response = await fetch(
         "https://fakestoreapi.com/products/category/women's clothing"

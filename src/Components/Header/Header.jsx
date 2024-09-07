@@ -10,6 +10,8 @@ import { IoBagOutline } from "react-icons/io5";
 import { CgProfile } from "react-icons/cg";
 import Login from "../../Pages/Login/Login";
 import { Link } from "react-router-dom";
+import Search from "../Search/Search";
+import SearchBigScreen from "../Search/SearchBigScreen";
 
 export const Header = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -56,7 +58,9 @@ export const Header = () => {
     <>
       <nav className="sticky top-0 flex justify-around  p-3 bg-white-800 text-black h-[90px] border-b-2 bg-white z-50">
         <div className="text-gray-600 hidden lg:flex text-5xl font-semibold items-center">
-          <div>LOGO</div>
+          <div>
+            <Link to="/">LOGO</Link>
+          </div>
         </div>
 
         <div className="hidden lg:flex md:justify-evenly space-x-6 items-end">
@@ -96,7 +100,7 @@ export const Header = () => {
               </div>
             )}
             <div className="flex items-center">
-              <div className="flex ">
+              {/* <div className="flex ">
                 <div className="text-black border-l-[1px] border-t-[1px] border-b-[1px] border-black  rounded-l-full  focus:outline-none ">
                   <input
                     type="text"
@@ -107,7 +111,10 @@ export const Header = () => {
                 <div className="text-black px-4 py-2 bg-white border-r-[1px] border-t-[1px] border-b-[1px] border-gray-600 rounded-r-full focus:outline-none w-full flex items-center">
                   <FaMagnifyingGlass />
                 </div>
-              </div>
+              </div> */}
+
+              <SearchBigScreen />
+
               <div
                 className=" text-white bg-gray-600 cursor-pointer ml-3 border-[1px] p-2 rounded-full border-gray-600"
                 onClick={handleLikeButtonClick}
@@ -126,9 +133,9 @@ export const Header = () => {
 
         <div className="flex-col  lg:hidden w-full">
           <div className="flex items-center space-x-4 justify-center">
-            <div className="flex ">
+            {/* <div className="flex ">
               <div className="text-black px-2 py-1 bg-white border-l-[1px] border-t-[1px] border-b-[1px] border-gray-600 rounded-l-full focus:outline-none w-full flex items-center">
-                LOGO
+                <Link to="/">LOGO</Link>
               </div>
               <div className="text-black  border-t-[1px] border-b-[1px] border-gray-600    focus:outline-none ">
                 <input
@@ -143,7 +150,8 @@ export const Header = () => {
               >
                 <FaMagnifyingGlass />
               </div>
-            </div>
+            </div> */}
+            <Search />
 
             <div
               className=" text-gray-600  cursor-pointer    rounded-full "
