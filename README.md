@@ -63,6 +63,24 @@ This will start the app at http://localhost:5173.
 
 Deploy the app to your preferred hosting service (e.g., Vercel, Netlify, or GitHub Pages).
 
+## Frontend Tools and Technologies
+
+### React.js:
+Used for creating a highly interactive, component-based UI. React allows for modular, reusable components that make the frontend maintainable and scalable.
+
+### React Router:
+Enables seamless navigation between various pages (e.g., product lists, product details, cart, and wishlist) without full-page reloads.
+
+### Redux: 
+Manages application-wide state, such as cart and wishlist contents, across components. Redux ensures that changes in state are reflected immediately across the app.
+
+### CSS, Tailwinds  and Styled Components:
+To ensure a responsive and attractive UI, the app uses CSS modules and Styled Components for modular styling and theming.
+
+### Local Storage: 
+For cart and wishlist persistence, enabling users to maintain their session across page reloads or browser closures.
+
+
 ## Development Process:
 
 --Planning & Design:
@@ -104,6 +122,11 @@ Developed a search component that filters product lists based on user input, pro
 
 _Problem_: Redirecting users to the login page when attempting to add items to the cart was initially causing page reloads infinitely.
 _Solution_: user state was changing infinitely that was causing issue to we implemented to change the user state only on signup and login and when theres a user in the session.
+
+## Key Learning:
+
+This project was an invaluable learning experience, particularly in understanding the MERN stack and full-stack development. I gained hands-on experience with Redux for state management, local storage for data persistence, and responsive design techniques to ensure the platform worked on all devices. Furthermore, working in a team environment helped me develop my collaboration skills, particularly in using GitHub for version control and managing codebases across multiple contributors.
+
 
 ## This project is deployed on netlify
 
