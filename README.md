@@ -4,7 +4,7 @@ Description: This project is an e-commerce frontend interface inspired by AJIO, 
 
 ## Deployment
 
-Vercel Deployment link :
+Vercel Deployment link : https://ajio-project.netlify.app/
 
 ## Tech Stack
 
