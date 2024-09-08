@@ -63,6 +63,7 @@ function Login({ togglePopup }) {
       .catch((error) => {
         //const errorCode = error.code;
         //const errorMessage = error.message;
+        alert(error.message);
         setError(error.message);
         // console.log(error.message);
         // console.log(errorMessage);
@@ -92,6 +93,7 @@ function Login({ togglePopup }) {
         );
       })
       .catch((error) => {
+        alert(error.message);
         setError(error.message);
       });
     togglePopup(); // Close the popup after login

@@ -67,7 +67,7 @@ export const Header = () => {
         <div className="text-gray-600 hidden lg:flex text-5xl font-semibold items-center">
           {/* link for home page */}
           <div>
-            <Link to="/">LOGO</Link>
+            <Link to="/">AJIO</Link>
           </div>
         </div>
         {/* links for different pages */}
