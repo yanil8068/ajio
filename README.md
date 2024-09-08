@@ -4,7 +4,7 @@ Description: This project is an e-commerce frontend interface inspired by AJIO, 
 
 ## Deployment
 
-Vercel Deployment link : https://ajio-project.netlify.app/
+Netlify Deployment link : https://ajio-project.netlify.app/
 
 ## Tech Stack
 
@@ -104,6 +104,8 @@ Developed a search component that filters product lists based on user input, pro
 
 _Problem_: Redirecting users to the login page when attempting to add items to the cart was initially causing page reloads infinitely.
 _Solution_: user state was changing infinitely that was causing issue to we implemented to change the user state only on signup and login and when theres a user in the session.
+
+## This project is deployed on netlify
 
 ## Authors
 
