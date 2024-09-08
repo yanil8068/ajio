@@ -74,7 +74,7 @@ This project is an e-commerce frontend interface inspired by AJIO. It enables us
     Open [http://localhost:5173](http://localhost:5173) to view it in your browser.
 
 6. **Deployment**:
-   You can deploy the app on platforms like [Netlify](https://www.netlify.com/), [Vercel](https://vercel.com/), or GitHub Pages.
+   You can deploy the app on platforms like [Netlify](https://www.netlify.com/).
 
 ## Development Process
 
