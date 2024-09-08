@@ -2,7 +2,7 @@
 # AJIO
 
 **Description:**  
-This project is an e-commerce frontend interface inspired by AJIO. It enables users to browse products, manage carts, and securely authenticate using Firebase. Users can browse products without the need for login/signup, but will be redirected to the authentication page when attempting to add items to the cart. The project features efficient state management using Redux Toolkit and a fully responsive UI built with Tailwind CSS.
+This project is an e-commerce frontend interface inspired by AJIO. It enables users to browse products, manage carts, and securely authenticate using Firebase. Users can browse products without the need for login/signup, but will be redirected to the authentication page when attempting to add items to the cart or visit the wishlist page. The project features efficient state management using Redux Toolkit and a fully responsive UI built with Tailwind CSS.
 
 **Netlify Deployment:**  
 [Live Demo](https://ajio-project.netlify.app/)
@@ -11,7 +11,7 @@ This project is an e-commerce frontend interface inspired by AJIO. It enables us
 
 - **React.js** - Interactive, component-based UI
 - **Redux Toolkit** - Efficient global state management
-- **Firebase** - Authentication (Login, Signup, Session Persistence)
+- **Firebase** - Authentication (Login, Signup, Session Persistence, Forget password)
 - **Tailwind CSS** - Responsive and utility-first styling
 - **React Router** - Seamless page navigation
 - **React Icons** - For consistent and modern icon usage
@@ -81,12 +81,12 @@ This project is an e-commerce frontend interface inspired by AJIO. It enables us
 ### Planning & Design
 
 - The project started with designing a modern UI inspired by AJIO, using React for a component-based architecture.
-- Tailwind CSS and Material UI were chosen for responsive, customizable components.
+- Tailwind CSS was chosen for responsive, customizable components.
 - Redux Toolkit was used to manage global states, like cart data and user authentication.
   
 ### Authentication Setup
 
-- Integrated Firebase and JWT for secure user authentication.
+- Integrated Firebase for secure user authentication.
 - Implemented login and signup, with an automatic redirect to the login page when users attempt cart actions without being logged in.
 
 ### Cart & Product Management
